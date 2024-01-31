@@ -1,2 +1,2 @@
-# snakeByGZRC.github.io
-snake<br>yes.
+# snakeByGZRC.github
+## This is the website:
