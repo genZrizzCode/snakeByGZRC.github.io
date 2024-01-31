@@ -73,7 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
             generateFood();
         } else {
             // Remove the last segment if no food is eaten
-            snake.pop();
+            const tail = snake.pop();
+            const tailIndex = tail.row * gridSize + tail.col;
+            cells[tailIndex].classList.remove('snake');
         }
 
         // Check for collision with self
