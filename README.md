@@ -1,2 +1,1 @@
-# snakeByGZRC.github
-## This is the website:
+# https://genzrizzcode.github.io/snakeByGZRC.github.io/snakeByGZRC.github.io/
