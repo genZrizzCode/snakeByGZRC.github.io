@@ -1,3 +1,2 @@
 # snakeByGZRC.github.io
-snake
-yes
+snake<br>yes
