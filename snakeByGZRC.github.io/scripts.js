@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function generateFood() {
+        const index = food.row * gridSize + food.col;
+        cells[index].classList.remove('food'); // Remove food class from previous cell
+
         food = {
             row: Math.floor(Math.random() * gridSize),
             col: Math.floor(Math.random() * gridSize)
@@ -93,6 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetGame() {
         snake = [{ row: 10, col: 10 }];
         direction = 'right';
+        const foodIndex = food.row * gridSize + food.col;
+        cells[foodIndex].classList.remove('food'); // Remove food class from current food cell
         generateFood();
         drawSnake();
     }
@@ -115,7 +120,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     createGameBoard();
-    resetGame();
-    setInterval(moveSnake, 200);
-    window.addEventListener('keydown', handleKeyPress);
-});
