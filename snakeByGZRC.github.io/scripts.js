@@ -44,8 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 col: Math.floor(Math.random() * gridSize)
             };
         }
-
-        drawFood();
     }
 
     function moveSnake() {
@@ -71,12 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check for collision with food
         if (head.row === food.row && head.col === food.col) {
             generateFood();
+            drawFood(); // Call drawFood after generating new food
         } else {
             // Remove the last segment if no food is eaten
             const tail = snake.pop();
             const tailIndex = tail.row * gridSize + tail.col;
             cells[tailIndex].classList.remove('snake');
         }
+
+        // Remove food class from the cell
+        const foodIndex = food.row * gridSize + food.col;
+        cells[foodIndex].classList.remove('food');
 
         // Check for collision with self
         if (snake.slice(1).some(segment => segment.row === head.row && segment.col === head.col)) {
